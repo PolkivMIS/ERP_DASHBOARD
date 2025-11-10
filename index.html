@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polkiv Admin Dashboard</title>
+
+  <!-- Fonts & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/top-box.css" data-topbox-css />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- === Sidebar Navigation === -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <img src="icons/Company_Logo.gif" alt="Dashboard Logo" />
+    </div>
+
+    <a href="#" class="glow-button" onclick="loadTab(0); closeSidebar()">
+      <img src="icons/Goods1.gif" class="icon-gif" />
+      <span class="text-label">GOOD RECEIVE PO</span>
+    </a>
+
+    <a href="#" class="glow-button" onclick="loadTab(1); closeSidebar()">
+      <img src="icons/payment_collection.gif" class="icon-gif" />
+      <span class="text-label">PAYMENT COLLECTION</span>
+    </a>
+
+    <a href="#" class="glow-button" onclick="loadTab(2); closeSidebar()">
+      <img src="icons/Coins.gif" class="icon-gif" />
+      <span class="text-label">SALES MASTER</span>
+    </a>
+
+    <a href="#" class="glow-button" onclick="loadTab(3); closeSidebar()">
+      <img src="icons/Shop.gif" class="icon-gif" />
+      <span class="text-label">SHOP-IN-SHOP</span>
+    </a>
+
+    <a href="#" class="glow-button" onclick="loadTab(4); closeSidebar()">
+      <img src="icons/Sales.gif" class="icon-gif" />
+      <span class="text-label">DAILY SALES REPORT</span>
+    </a>
+
+    <a href="#" class="glow-button" onclick="loadTab(5); closeSidebar()">
+      <img src="icons/Attendence.gif" class="icon-gif" />
+      <span class="text-label">STORE ATTENDENCE</span>
+    </a>
+
+    <a href="#" class="glow-button" onclick="loadTab(6); closeSidebar()">
+      <img src="icons/Vault.gif" class="icon-gif" />
+      <span class="text-label">ACCOUNTS CHECKLIST</span>
+    </a>
+  </nav>
+
+  <!-- === Floating Pull Icon === -->
+  <span class="pull-icon closed" id="pullIcon" onclick="toggleSidebar()" aria-label="Toggle Sidebar">☰</span>
+
+  <!-- === Main Content Area === -->
+  <div class="main-content">
+    <div class="header-stack">
+      <div class="header-box top-box">
+        <!-- ✅ MP4 Video Background -->
+        <video autoplay muted loop playsinline class="top-video">
+          <source src="assets/Consistency creates miracles .......mp4" type="video/mp4" />
+        </video>
+        <div class="top-title"> </div>
+      </div>
+
+      <div class="header-box bottom-box">
+        <div class="bottom-box-content">
+          <div class="menu" id="subtabContainer">
+            <div class="menu__border"></div>
+          </div>
+          <span id="active-tab-name">Dashboard</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="embed-area">
+      <div class="empty-state">
+        <img src="assets/loader.gif" alt="Waiting GIF" class="embed-gif" />
+        <p>Select a tab to view its dashboard.</p>
+      </div>
+
+      <div class="chart-section" style="display:none;" id="chartContainer">
+        <canvas id="paymentChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- === SVG Border ClipPath === -->
+  <div class="svg-container">
+    <svg viewBox="0 0 202.9 45.5">
+      <clipPath id="menu" clipPathUnits="objectBoundingBox" transform="scale(0.0049285362247413 0.021978021978022)">
+        <path d="M6.7,45.5c5.7,0.1,14.1-0.4,23.3-4c5.7-2.3,9.9-5,18.1-10.5c10.7-7.1,11.8-9.2,20.6-14.3c5-2.9,9.2-5.2,15.2-7
+          c7.1-2.1,13.3-2.3,17.6-2.1c4.2-0.2,10.5,0.1,17.6,2.1c6.1,1.8,10.2,4.1,15.2,7c8.8,5,9.9,7.1,20.6,14.3c8.3,5.5,12.4,8.2,18.1,10.5
+          c9.2,3.6,17.6,4.2,23.3,4H6.7z"/>
+      </clipPath>
+    </svg>
+  </div>
+
+  <!-- === Global Script === -->
+  <script src="script.js"></script>
+
+  <!-- === Sidebar Toggle Script === -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const pullIcon = document.getElementById('pullIcon');
+
+      sidebar.classList.toggle('open');
+
+      if (sidebar.classList.contains('open')) {
+        pullIcon.classList.remove('closed');
+        pullIcon.classList.add('open');
+        pullIcon.textContent = '❌';
+      } else {
+        pullIcon.classList.remove('open');
+        pullIcon.classList.add('closed');
+        pullIcon.textContent = '☰';
+      }
+    }
+
+    function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const pullIcon = document.getElementById('pullIcon');
+
+      sidebar.classList.remove('open');
+      pullIcon.classList.remove('open');
+      pullIcon.classList.add('closed');
+      pullIcon.textContent = '☰';
+    }
+  </script>
+
+  <!-- === Chart Demo Script === -->
+  <script>
+    function showChart() {
+      document.getElementById("chartContainer").style.display = "block";
+      const ctx = document.getElementById("paymentChart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["ANINDO", "VIKASH", "SHINTU", "MAHENDRA", "NISHANT JI"],
+          datasets: [
+            {
+              label: "Target",
+              data: [120000, 95000, 88000, 102000, 110000],
+              backgroundColor: "rgba(63, 81, 181, 0.6)"
+            },
+            {
+              label: "Achieved",
+              data: [90000, 87000, 82000, 95000, 98000],
+              backgroundColor: "rgba(56, 142, 60, 0.6)"
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "top" },
+            title: { display: true, text: "Target vs Achieved by Executive" }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                callback: value => value.toLocaleString("en-IN")
+              }
+            }
+          }
+        }
+      });
+    }
+
+    if (window.location.hash === "#tab1") {
+      showChart();
+    }
+  </script>
+</body>
+</html>
