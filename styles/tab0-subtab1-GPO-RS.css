@@ -18,7 +18,7 @@ body {
   min-width: 320px;                         /* Minimum width for mobile safety */
   height: auto;                             /* Height adjusts to content */
   max-height: 700px;                        /* Maximum height allowed */
-  min-height: 520px;                        /* Minimum height for layout stability */
+  min-height: 480px;                        /* Minimum height for layout stability */
   margin: 0 auto;                           /* Center horizontally */
   background: #ffffff;                      /* Background color */
   border-radius: 10px;                      /* Rounded corners */
@@ -113,4 +113,5 @@ body {
     height: 200%;           /* Stretch iframe to fill scaled wrapper */
   }
 }
+
 
