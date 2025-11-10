@@ -1,0 +1,309 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4098e6;
+  color: #1e1e2f;
+  padding: 0;
+  overflow-y: visible;
+}
+
+.dashboard {
+  font-family: 'Poppins', sans-serif;       /* Font for entire dashboard */
+  padding: 20px 10px 20px 30px;                            /* Inner spacing around dashboard */
+  width: 100%;                              /* Full width relative to parent */
+  max-width: 1800px;                        /* Maximum width allowed */
+  min-width: 320px;                         /* Minimum width for mobile safety */
+  height: auto;                             /* Height adjusts to content */
+  max-height: 700px;                        /* Maximum height allowed */
+  min-height: 520px;                        /* Minimum height for layout stability */
+  margin: 0 auto;                           /* Center horizontally */
+  background: #ffffff;                      /* Background color */
+  border-radius: 10px;                      /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0,0,0,0.04);     /* Soft outer shadow */
+  overflow-y: auto;                         /* Enables scroll if content exceeds max-height */
+}
+
+/* === Header === */
+.dashboard-header {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #1d22b0;
+}
+
+.dashboard-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #1d22b0, #3f51b5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Month Dropdown === */
+.month-selector {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  gap: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.month-selector label {
+  font-weight: 600;
+  color: #1d22b0;
+}
+
+#monthDropdown {
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 15px;
+  border: 1px solid #3f51b5;
+  background: #fff;
+  color: #1d22b0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+#monthDropdown:hover {
+  border-color: #1d22b0;
+  box-shadow: 0 0 4px rgba(63, 81, 181, 0.2);
+}
+
+/* === Body Layout: Table Left, Chart Right === */
+.dashboard-body {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  height: 380px;
+}
+
+/* === Table Section === */
+.table-section {
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #1d22b0, #f7f9fc);
+  border: 2px solid #3f51b5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* === Scrollable Table Container === */
+.table-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+/* === Table Styling === */
+#executive-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  font-size: 8.5px;
+  background-color: transparent;
+  text-align: center;
+  table-layout: fixed;
+}
+
+/* === Header Styling === */
+#executive-table th {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to bottom, #1d22b0, #3f51b5);
+  color: #fff;
+  font-weight: 600;
+  padding: 15px 8px;
+  border-bottom: 1px solid #ccc;
+  z-index: 2;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1);
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* === Capsule Cell Styling === */
+#executive-table td {
+  padding: 3px 9px;
+  margin: 2px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 15px;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* === Row Hover === */
+#executive-table tbody tr:hover td {
+  background-color: #e8f0ff;
+  border-color: #c5d8ff;
+  box-shadow: inset 0 0 0 1px #c5d8ff;
+  cursor: pointer;
+}
+
+/* === Cell Hover === */
+#executive-table td:hover {
+  background-color: #dbe8ff;
+  box-shadow: 0 0 4px rgba(63, 81, 181, 0.2);
+}
+
+/* === Zebra Striping === */
+#executive-table tbody tr:nth-child(even) td {
+  background-color: #f9f9fc;
+}
+
+/* === Total Row Styling === */
+#executive-table tfoot th {
+  position: sticky;
+  bottom: 0;
+  background: #e0e0e0;
+  font-weight: bold;
+  color: #1d3557;
+  padding: 6px 8px;
+  border-top: 2px solid #ccc;
+  z-index: 1;
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05);
+}
+
+/* === Conditional Coloring === */
+#executive-table td:nth-child(4) {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+#executive-table td:nth-child(5) {
+  color: #388e3c;
+  font-weight: bold;
+}
+
+/* === Chart Section === */
+.chart-section {
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid #1d22b0;
+  background: linear-gradient(to bottom right, #ffffff, #f7f9fc);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Chart Canvas === */
+canvas {
+  flex: 1;
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+
+/* === Mobile Responsive Enhancements === */
+@media (max-width: 768px) {
+  body {
+    font-size: 8px;
+    padding: 0;
+  }
+
+  .dashboard {
+    width: 95%;
+    padding: 10px;
+    max-height: none;
+    min-height: 1000px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 10px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 16px;
+  }
+
+  .month-selector {
+    flex-wrap: wrap;
+    font-size: 13px;
+    margin-top: 6px;
+    margin-bottom: 40px;
+    margin-left: 10px;
+  }
+
+  #monthDropdown {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  .dashboard-body {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+  }
+
+  .table-section,
+  .chart-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .chart-section {
+    width: 100%;
+    height: 450px;
+  }
+
+  .table-scroll {
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-radius: 6px;
+  }
+
+  #executive-table {
+    min-width: 600px;
+    font-size: 7.5px;
+  }
+
+  #executive-table th,
+  #executive-table td {
+    padding: 5px 6px;
+    min-width: 80px;
+    max-width: 120px;
+  }
+
+  #executive-table th {
+    font-size: 7.5px;
+    z-index: 10;
+  }
+
+  #executive-table td {
+    font-size: 7.5px;
+  }
+
+  #executive-table td:last-child {
+    font-size: 8px;
+  }
+
+  canvas {
+    width: 100%;
+    height: 240px;
+  }
+}

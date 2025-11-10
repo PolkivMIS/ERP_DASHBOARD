@@ -1,0 +1,351 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4098e6;
+  color: #1e1e2f;
+  padding: 0;
+  overflow-y: visible;
+}
+
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 20px;
+}
+
+/* === LEFT: Sales Table === */
+.sales-table {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+.sales-table h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: #6225E6;
+  text-align: center;
+}
+
+.sales-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sales-table th,
+.sales-table td {
+  padding: 3px 5px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.sales-table thead {
+  background-color: #6225E6;
+  color: white;
+}
+
+.sales-table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+/* === RIGHT: Panel Layout === */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand-logo-box {
+  display: flex;
+  justify-content: center;
+}
+
+.brand-logo {
+  width: 240px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+}
+
+/* === Summary Grid Layout === */
+.sales-summary-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* === Input Group Styling === */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.input-group label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* === Native Inputs (Month, Year, Date) === */
+.input-group select,
+.input-group input[type="date"],
+#monthInput,
+#yearInput {
+  width: 140px;
+  height: 32px;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group select:focus,
+.input-group input[type="date"]:focus {
+  border-color: #3ca0e7;
+  box-shadow: 0 0 0 2px rgba(60, 160, 231, 0.2);
+  outline: none;
+}
+
+/* === Summary Box Styling with Quarter-Circle Reveal === */
+.summary-box {
+  position: relative;
+  overflow: hidden;
+  background-color: #1e1e2f;
+  color: #fff;
+  border-radius: 12px;
+  height: 80px;
+  min-width: 200px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === Quarter Circle Overlay (Always Visible) === */
+.summary-box::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--box-color, #00b894);
+  border-radius: 50%;
+  transform: scale(0.6); /* 👈 Always visible */
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* === Trigger Animation on Hover or Value Change === */
+.summary-box:hover::before,
+.summary-box.animate::before {
+  transform: scale(5);
+}
+
+.summary-box h4,
+.summary-box p {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.summary-box:hover h4,
+.summary-box:hover p,
+.summary-box.animate h4,
+.summary-box.animate p {
+  color: #fff;
+}
+
+/* === Text Styling === */
+.summary-box h4 {
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.summary-box p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.summary-box.animate p {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* === Responsive Layout === */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    background-color: #4098e6;
+    padding: 0 0px;
+  }
+
+  .dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px 0;
+  }
+
+  /* === Reorder Panels: Right Panel First === */
+  .right-panel {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .brand-logo-box {
+    justify-content: center;
+  }
+
+  .brand-logo {
+    width: 200px;
+    height: auto;
+    margin-left: 80px;
+    max-height: 60px;
+    object-fit: contain;
+  }
+
+  /* === Summary Grid: Two Tabs Per Row === */
+  .sales-summary-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .summary-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .input-group {
+    flex: 1 1 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .input-group label {
+    font-size: 20px;
+    margin-left: 60px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .input-group select,
+  .input-group input[type="date"],
+  #monthInput,
+  #yearInput {
+    width: 80%;
+    height: 30px;
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-left: 60px;
+    border-radius: 16px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    text-align: center;
+  }
+
+  .summary-box {
+    flex: 1 1 30%;
+    height: 70px;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .summary-box h4 {
+    font-size: 12px;
+    margin-bottom: 4px;
+    margin-bottom: 4px;
+  }
+
+  .summary-box p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  /* === Sales Table === */
+  .sales-table {
+    margin-left: 15px;
+    padding: 10px 5px;
+    font-size: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    background-color: #fff;
+    box-shadow: 0 0 6px rgba(0,0,0,0.05);
+  }
+
+  .sales-table h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #6225E6;
+  }
+
+  .sales-table table {
+    min-width: 650px;
+    width: 80%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+
+  .sales-table th,
+  .sales-table td {
+    font-size: 12px;
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .sales-table thead {
+    background-color: #6225E6;
+    color: white;
+  }
+
+  .sales-table tbody tr:hover {
+    background-color: #f3f3f3;
+  }
+}

@@ -1,0 +1,423 @@
+/* === Root Layout === */
+#Tab1Subtab2 {
+  padding: 30px;
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(to bottom right, #f4f6fb, #e9ecf5);
+  color: #333;
+  font-size: 9px;
+}
+
+/* === Header === */
+#Tab1Subtab2 .dashboard-header {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #1d22b0;
+}
+
+#Tab1Subtab2 .dashboard-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #1d22b0, #3f51b5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Body Layout === */
+#Tab1Subtab2 .dashboard-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* === Table Section === */
+#Tab1Subtab2 .table-section {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, #ffffff, #f7f9fc);
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Scrollable Table Container with Persistent Border === */
+#Tab1Subtab2 .table-scroll {
+  flex: 1;
+  max-height: 420px;
+  overflow: auto;
+  border: 10px solid hsl(207, 85%, 68%);
+  border-radius: 10px;
+}
+
+/* === Table Styling === */
+#Tab1Subtab2 #party-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5px;
+  background-color: #fff;
+  text-align: center;
+  table-layout: fixed;
+  border: none;
+}
+
+/* === Consistent Column Widths === */
+#Tab1Subtab2 #party-table th,
+#Tab1Subtab2 #party-table td {
+  min-width: 100px;
+  max-width: 100px;
+  border: 2px solid #ccc;
+}
+
+/* === Header Styling === */
+#Tab1Subtab2 #party-table th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: linear-gradient(to right, #1d22b0, #3f51b5);
+  color: #fff;
+  font-weight: 600;
+  padding: 6px 4px;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1);
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.3;
+  font-size: 8px;
+}
+
+/* === Sticky Columns A–D: Header Cells === */
+#Tab1Subtab2 #party-table th:nth-child(1) { left: 0; z-index: 10; }
+#Tab1Subtab2 #party-table th:nth-child(2) { left: 100px; z-index: 10; }
+#Tab1Subtab2 #party-table th:nth-child(3) { left: 200px; z-index: 10; }
+#Tab1Subtab2 #party-table th:nth-child(6) {
+  left: 300px;
+  z-index: 10;
+  box-shadow: 2px 0 0 #b0c4de;
+}
+
+
+
+/* === Sticky Columns A–D: Body Cells === */
+#Tab1Subtab2 #party-table td:nth-child(1) {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background-color: #dbe8ff;
+}
+
+#Tab1Subtab2 #party-table td:nth-child(2) {
+  position: sticky;
+  left: 100px;
+  z-index: 2;
+  background-color: #dbe8ff;
+}
+
+#Tab1Subtab2 #party-table td:nth-child(3) {
+  position: sticky;
+  left: 200px;
+  z-index: 2;
+  background-color: #dbe8ff;
+}
+
+#Tab1Subtab2 #party-table td:nth-child(6) {
+  position: sticky;
+  left: 300px;
+  z-index: 2;
+  background-color: #dbe8ff;
+  box-shadow: 2px 0 0 #b0c4de;
+}
+
+#Tab1Subtab2 #party-table td:nth-child(4),
+#Tab1Subtab2 #party-table td:nth-child(5) {
+  display: none;
+}
+
+/* === Cell Styling === */
+#Tab1Subtab2 #party-table td {
+  padding: 6px 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 500;
+  color: #2c3e50;
+  background: #fff;
+  transition: background 0.2s ease;
+  font-size: 8px;
+}
+
+/* === Row Hover === */
+#Tab1Subtab2 #party-table tbody tr:hover td {
+  background-color: #e8f0ff;
+}
+
+/* === Zebra Striping === */
+#Tab1Subtab2 #party-table tbody tr:nth-child(even) td {
+  background-color: #f9f9fc;
+}
+
+/* === Highlight TOTAL Column === */
+#Tab1Subtab2 #party-table td:last-child {
+  font-weight: bold;
+  background-color: #f0f8ff;
+  color: #1d3557;
+}
+
+/* === Mobile-Friendly Responsive Styles === */
+@media (max-width: 768px) {
+  /* === Root Layout === */
+#Tab1Subtab2 {
+  padding: 30px;
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(to bottom right, #f4f6fb, #e9ecf5);
+  color: #333;
+  font-size: 9px;
+}
+
+/* === Header === */
+#Tab1Subtab2 .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+#Tab1Subtab2 .dashboard-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #1d22b0, #3f51b5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === Body Layout === */
+#Tab1Subtab2 .dashboard-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* === Table Section === */
+#Tab1Subtab2 .table-section {
+  width: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to bottom right, #ffffff, #f7f9fc);
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Scrollable Table Container === */
+#Tab1Subtab2 .table-scroll {
+  flex: 1;
+  max-height: 420px;
+  overflow: auto;
+  border: 10px solid hsl(207, 85%, 68%);
+  border-radius: 10px;
+}
+
+/* === Table Styling === */
+#Tab1Subtab2 #party-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5px;
+  background-color: #fff;
+  text-align: center;
+  table-layout: fixed;
+  border: none;
+}
+
+/* === Column Widths === */
+#Tab1Subtab2 #party-table th,
+#Tab1Subtab2 #party-table td {
+  min-width: 100px;
+  max-width: 100px;
+  border: 2px solid #ccc;
+}
+
+/* === Header Styling === */
+#Tab1Subtab2 #party-table th {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(to right, #1d22b0, #3f51b5);
+  color: #fff;
+  font-weight: 600;
+  padding: 6px 4px;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.1);
+  white-space: normal;
+  word-break: break-word;
+  text-align: center;
+  line-height: 1.3;
+  font-size: 8px;
+  z-index: 20; /* ensures header stays above sticky columns */
+}
+
+/* === Sticky Columns A–D: Header Cells === */
+#Tab1Subtab2 #party-table th:nth-child(1) { left: 0; z-index: 21; }
+#Tab1Subtab2 #party-table th:nth-child(2) { left: 100px; z-index: 21; }
+#Tab1Subtab2 #party-table th:nth-child(3) { left: 200px; z-index: 21; }
+#Tab1Subtab2 #party-table th:nth-child(6) {
+  left: 300px;
+  z-index: 21;
+  box-shadow: 2px 0 0 #b0c4de;
+}
+
+/* === Sticky Columns A–D: Body Cells === */
+#Tab1Subtab2 #party-table td:nth-child(1),
+#Tab1Subtab2 #party-table td:nth-child(2),
+#Tab1Subtab2 #party-table td:nth-child(3),
+#Tab1Subtab2 #party-table td:nth-child(6) {
+  position: sticky;
+  z-index: 10;
+  background-color: #dbe8ff;
+}
+
+#Tab1Subtab2 #party-table td:nth-child(1) { left: 0; }
+#Tab1Subtab2 #party-table td:nth-child(2) { left: 100px; }
+#Tab1Subtab2 #party-table td:nth-child(3) { left: 200px; }
+#Tab1Subtab2 #party-table td:nth-child(6) {
+  left: 300px;
+  box-shadow: 2px 0 0 #b0c4de;
+}
+
+/* === Hide Columns 4 and 5 === */
+#Tab1Subtab2 #party-table th:nth-child(4),
+#Tab1Subtab2 #party-table th:nth-child(5),
+#Tab1Subtab2 #party-table td:nth-child(4),
+#Tab1Subtab2 #party-table td:nth-child(5) {
+  display: none;
+}
+
+/* === Cell Styling === */
+#Tab1Subtab2 #party-table td {
+  padding: 6px 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 500;
+  color: #2c3e50;
+  background: #fff;
+  transition: background 0.2s ease;
+  font-size: 8px;
+}
+
+/* === Row Hover === */
+#Tab1Subtab2 #party-table tbody tr:hover td {
+  background-color: #e8f0ff;
+}
+
+/* === Zebra Striping === */
+#Tab1Subtab2 #party-table tbody tr:nth-child(even) td {
+  background-color: #f9f9fc;
+}
+
+/* === Highlight TOTAL Column === */
+#Tab1Subtab2 #party-table td:last-child {
+  font-weight: bold;
+  background-color: #f0f8ff;
+  color: #1d3557;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+
+  .dashboard {
+    width: 95%;
+    padding: 10px;
+    max-height: none;
+    min-height: 1000px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  
+  #Tab1Subtab2 {
+    padding: 16px;
+    font-size: 8px;
+  }
+
+  #Tab1Subtab2 .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  #Tab1Subtab2 .dashboard-header h2 {
+    font-size: 18px;
+  }
+
+  #Tab1Subtab2 .dashboard-body {
+    gap: 8px;
+  }
+
+  #Tab1Subtab2 .table-section {
+    border-width: 1px;
+    box-shadow: none;
+  }
+
+  #Tab1Subtab2 .table-scroll {
+    max-height: 950px;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-width: 6px;
+  }
+
+  #Tab1Subtab2 #party-table {
+    font-size: 7.5px;
+    min-width: 600px;
+    border-collapse: collapse;
+  }
+
+  #Tab1Subtab2 #party-table th,
+  #Tab1Subtab2 #party-table td {
+    min-width: 80px;
+    max-width: 80px;
+    padding: 4px 3px;
+    border: 1px solid #ccc;
+  }
+
+  /* Hide columns 4 and 5 */
+  #Tab1Subtab2 #party-table th:nth-child(4),
+  #Tab1Subtab2 #party-table th:nth-child(5),
+  #Tab1Subtab2 #party-table td:nth-child(4),
+  #Tab1Subtab2 #party-table td:nth-child(5) {
+    display: none;
+  }
+
+  /* Recalculate sticky offsets */
+  #Tab1Subtab2 #party-table th:nth-child(1),
+  #Tab1Subtab2 #party-table td:nth-child(1) { left: 0; }
+  #Tab1Subtab2 #party-table th:nth-child(2),
+  #Tab1Subtab2 #party-table td:nth-child(2) { left: 80px; }
+  #Tab1Subtab2 #party-table th:nth-child(3),
+  #Tab1Subtab2 #party-table td:nth-child(3) { left: 160px; }
+  #Tab1Subtab2 #party-table th:nth-child(6),
+  #Tab1Subtab2 #party-table td:nth-child(6) { left: 240px; }
+
+  /* Sticky layering */
+  #Tab1Subtab2 #party-table th {
+    z-index: 20;
+  }
+
+  #Tab1Subtab2 #party-table td {
+    z-index: 10;
+  }
+
+  #Tab1Subtab2 #party-table td:last-child {
+    font-size: 8px;
+  }
+}
+}

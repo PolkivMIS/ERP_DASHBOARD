@@ -1,0 +1,253 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4098e6;
+  color: #1e1e2f;
+  padding: 0;
+  overflow-y: visible;
+}
+/* ------------------------------
+   Dashboard Container
+------------------------------ */
+.dashboard {
+  font-family: 'Poppins', sans-serif;       /* Font for entire dashboard */
+  padding: 16px;                            /* Inner spacing around dashboard */
+  width: 100%;                              /* Full width relative to parent */
+  max-width: 1800px;                        /* Maximum width allowed */
+  min-width: 320px;                         /* Minimum width for mobile safety */
+  height: auto;                             /* Height adjusts to content */
+  max-height: 700px;                        /* Maximum height allowed */
+  min-height: 520px;                        /* Minimum height for layout stability */
+  margin: 0 auto;                           /* Center horizontally */
+  background: #ffffff;                      /* Background color */
+  border-radius: 10px;                      /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0,0,0,0.04);     /* Soft outer shadow */
+  overflow-y: auto;                         /* Enables scroll if content exceeds max-height */
+}
+
+/* ------------------------------
+   Employee Dropdown
+------------------------------ */
+.employee-selector {
+  margin-bottom: 8px;                       /* Space below dropdown */
+}
+#employee-select {
+  padding: 4px 8px;                         /* Inner spacing */
+  font-size: 12px;                          /* Font size */
+  border-radius: 4px;                       /* Rounded corners */
+  border: 1px solid #ccc;                   /* Border style */
+  background: #fff;                         /* Background color */
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);    /* Subtle shadow */
+  transition: box-shadow 0.3s ease;         /* Hover transition */
+  width: 160px;                             /* Dropdown width */
+  height: 28px;                             /* Dropdown height */
+}
+#employee-select:hover {
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);    /* Stronger shadow on hover */
+}
+
+/* ------------------------------
+   Employee Card Section
+------------------------------ */
+.employee-card {
+  display: flex;                            /* Horizontal layout */
+  align-items: center;                     /* Vertical alignment */
+  gap: 32px;                                /* Space between photo and info */
+  margin-bottom: 8px;                       /* Space below card */
+}
+#employee-photo {
+  width: 140px;                             /* Image width */
+  height: 140px;                            /* Image height */
+  border-radius: 50%;                       /* Circular shape */
+  object-fit: cover;                        /* Crop image to fit */
+  border: 2px solid #ddd;                   /* Light border */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);    /* Depth effect */
+}
+.employee-info {
+  flex: 1;                                  /* Take remaining space */
+}
+.employee-info h2 {
+  margin: 0;                                /* Remove default margin */
+  font-size: 24px;                          /* Name font size */
+  font-weight: 600;                         /* Bold name */
+}
+.employee-info p {
+  margin: 2px 0 0;                          /* Space above store name */
+  font-size: 12px;                          /* Store font size */
+  color: #666;                              /* Muted gray */
+}
+
+/* ------------------------------
+   Summary Section Container
+------------------------------ */
+.summary-section {
+  display: flex;                            /* Horizontal layout */
+  flex-wrap: wrap;                          /* Allow wrapping */
+  gap: 8px;                                 /* Space between cards */
+  width: 100%;                              /* Full width */
+  margin-top: 8px;                          /* Space above summary section */
+}
+
+/* ------------------------------
+   Card Styling (Shared)
+------------------------------ */
+.attendance-summary,
+.salary-details,
+.attendance-chart {
+  flex: 1;                                  /* Equal growth */
+  min-width: 240px;                         /* Minimum width before wrapping */
+  background: #fff;                         /* White background */
+  padding: 16px;                            /* Inner spacing */
+  border-radius: 8px;                       /* Rounded corners */
+  box-shadow: 0 0 8px rgba(0,0,0,0.04);      /* Soft shadow */
+  margin-bottom: 0;                         /* No extra space below cards */
+}
+
+/* ------------------------------
+   Attendance Summary List
+------------------------------ */
+.attendance-summary ul,
+.salary-details ul {
+  list-style: none;                         /* Remove bullets */
+  padding: 0;                               /* Remove default padding */
+  margin: 0;                                /* Remove default margin */
+}
+.attendance-summary li,
+.salary-details li {
+  display: flex;                            /* Align label and value */
+  justify-content: space-between;          /* Push value to right */
+  align-items: center;                     /* Vertical alignment */
+  font-size: 12px;                          /* Text size */
+  margin-bottom: 3px;                       /* Space between items */
+  color: #444;                              /* Text color */
+}
+.attendance-summary li:last-child,
+.salary-details li:last-child {
+  margin-bottom: 0;                         /* Remove space after last item */
+}
+
+/* ------------------------------
+   Salary Value Styling
+------------------------------ */
+#net-salary,
+#monthly-salary,
+#daily-rate {
+  display: block;                           /* Full-width span */
+  text-align: right;                        /* Align value to right */
+  overflow-wrap: anywhere;                 /* Prevent clipping */
+  font-size: 13px;                          /* Text size */
+  font-weight: 600;                         /* Bold text */
+  color: #222;                              /* Darker text */
+}
+
+/* ------------------------------
+   Section Headings
+------------------------------ */
+h3 {
+  margin-top: 0;                            /* Remove default margin */
+  font-size: 13px;                          /* Heading size */
+  color: #333;                              /* Heading color */
+  border-bottom: 1px solid #eee;           /* Underline */
+  padding-bottom: 4px;                      /* Space below heading */
+}
+
+/* ------------------------------
+   Chart Canvas Styling
+------------------------------ */
+.attendance-chart canvas {
+  display: block;                           /* Center chart */
+  margin: 12px auto;                        /* Spacing above and below chart */
+  width: 160px;                             /* Fixed chart width */
+  height: 160px;                            /* Fixed chart height */
+}
+
+/* ------------------------------
+   Responsive Layout
+------------------------------ */
+@media screen and (max-width: 768px) {
+  /* === Dashboard Container === */
+  .dashboard {
+    width: 85%;
+    padding: 10px;
+    max-height: none;
+    min-height: 80vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* === Employee Dropdown === */
+  .employee-selector {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  #employee-select {
+    width: 80%;
+    font-size: 20px;
+    height: 32px;
+  }
+
+  /* === Employee Card Section === */
+  .employee-card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+  }
+
+  #employee-photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .employee-info h2 {
+    font-size: 30px;
+  }
+
+  .employee-info p {
+    font-size: 20px;
+  }
+
+  /* === Summary Section === */
+  .summary-section {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  /* === Cards === */
+  .attendance-summary,
+  .salary-details,
+  .attendance-chart {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  /* === Summary Lists === */
+  .attendance-summary li,
+  .salary-details li {
+    font-size: 15px;
+  }
+
+  /* === Salary Values === */
+  #net-salary,
+  #monthly-salary,
+  #daily-rate {
+    font-size: 14px;
+  }
+
+  /* === Section Headings === */
+  h3 {
+    font-size: 18px;
+    padding-bottom: 6px;
+  }
+
+  /* === Chart Canvas === */
+  .attendance-chart canvas {
+    width: 120%;
+    height: auto;
+    max-width: 320px;
+  }
+}

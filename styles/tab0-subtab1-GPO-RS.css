@@ -1,0 +1,116 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4098e6;
+  color: #1e1e2f;
+  padding: 0;
+  overflow-y: visible;
+}
+/* ------------------------------
+   Dashboard Container
+------------------------------ */
+.dashboard {
+  font-family: 'Poppins', sans-serif;       /* Font for entire dashboard */
+  padding: 16px;                            /* Inner spacing around dashboard */
+  width: 100%;                              /* Full width relative to parent */
+  max-width: 1800px;                        /* Maximum width allowed */
+  min-width: 320px;                         /* Minimum width for mobile safety */
+  height: auto;                             /* Height adjusts to content */
+  max-height: 700px;                        /* Maximum height allowed */
+  min-height: 520px;                        /* Minimum height for layout stability */
+  margin: 0 auto;                           /* Center horizontally */
+  background: #ffffff;                      /* Background color */
+  border-radius: 10px;                      /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0,0,0,0.04);     /* Soft outer shadow */
+  overflow-y: auto;                         /* Enables scroll if content exceeds max-height */
+}
+
+#Tab0Subtab1 {
+  padding: 24px;
+  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
+  background-color: #f4f6fb;
+  color: #333;
+  font-size: 8px;
+}
+
+#Tab0Subtab1 .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+#Tab0Subtab1 .dashboard-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
+  color: #1d22b0;
+}
+
+#Tab0Subtab1 .dashboard-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#Tab0Subtab1 .table-section {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #d0d0d0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#Tab0Subtab1 .sheet-zoom-wrapper {
+  transform: scale(0.6); /* Zoom out to 75% */
+  transform-origin: top left;
+  width: 170.33%; /* Compensate for scale to avoid clipping */
+  height: 430px; /* Adjust height as needed */
+}
+
+#Tab0Subtab1 iframe {
+  border: none;
+  background-color: #fff;
+  width: 100%;
+  height: 175%;
+}
+
+@media screen and (max-width: 768px) {
+  #Tab0Subtab1 {
+    padding: 16px;
+    font-size: 10px; /* Slightly larger for readability */
+  }
+
+  #Tab0Subtab1 .dashboard-header h2 {
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+  }
+
+  #Tab0Subtab1 .dashboard-body {
+    gap: 8px;
+  }
+
+  #Tab0Subtab1 .table-section {
+    border-radius: 6px;
+    box-shadow: none;
+  }
+
+  #Tab0Subtab1 .sheet-zoom-wrapper {
+    transform: scale(0.5); /* More zoom-out for small screens */
+    transform-origin: top left;
+    width: 200%;            /* Compensate for scale */
+    height: 950px;          /* Adjust height for mobile */
+  }
+
+  #Tab0Subtab1 iframe {
+    height: 200%;           /* Stretch iframe to fill scaled wrapper */
+  }
+}
+

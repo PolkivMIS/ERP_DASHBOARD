@@ -1,0 +1,118 @@
+/* === Top Box Container === */
+.top-box {
+  position: fixed;
+  top: 0;
+  left: 330px;
+  height: 110px;
+  width: 80%;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+}
+
+/* === MP4 Video Background === */
+.top-box .top-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  margin-left: 0px;
+  pointer-events: none;
+}
+
+/* === Gradient Overlay === */
+
+/* === Title Overlay === */
+.top-title {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  z-index: 2;
+}
+
+/* === Gradient Animation === */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Global Body Styles === */
+body {
+  background: #009688;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* === Mobile Responsive === */
+@media screen and (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .top-box {
+    height: 90px;
+    width: 100vw;
+    max-width: 100vw;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: 999;
+  }
+
+  .top-video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .top-title {
+    top: 6px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .top-box::after {
+    opacity: 0.9;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-box {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: 999;
+  }
+
+  .top-box .top-video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill; /* ✅ Stretch/squish instead of crop */
+  }
+
+  .top-title {
+    top: 6px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    z-index: 1000;
+  }
+}

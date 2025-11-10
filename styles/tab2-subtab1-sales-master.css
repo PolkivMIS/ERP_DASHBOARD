@@ -1,0 +1,328 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4098e6;
+  color: #1e1e2f;
+  padding: 0;
+  overflow-y: visible;
+}
+/* ------------------------------
+   Dashboard Container
+------------------------------ */
+
+/* === Layout === */
+#Tab1 {
+  padding: 4px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #4098e6;
+  color: #333;
+  font-size: 10px;
+}
+
+.dashboard {
+  font-family: 'Poppins', sans-serif;       /* Font for entire dashboard */
+  padding: 16px;                            /* Inner spacing around dashboard */
+  width: 100%;                              /* Full width relative to parent */
+  max-width: 1800px;                        /* Maximum width allowed */
+  min-width: 320px;                         /* Minimum width for mobile safety */
+  height: auto;                             /* Height adjusts to content */
+  max-height: 700px;                        /* Maximum height allowed */
+  min-height: 520px;                        /* Minimum height for layout stability */
+  margin: 0 auto;                           /* Center horizontally */
+  background: #ffffff;                      /* Background color */
+  border-radius: 10px;                      /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0,0,0,0.04);     /* Soft outer shadow */
+  overflow-y: auto;                         /* Enables scroll if content exceeds max-height */
+}
+/* === Header === */
+#Tab1 .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+#Tab1 .dashboard-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+    color: #1d22b0;
+}
+
+/* === Filter Bar === */
+#Tab1 .filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+#Tab1 .filter-bar label {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+#Tab1 .filter-bar select {
+  padding: 2px 10px;
+  font-size: 15px;
+  border: 3px solid #1d22b0;
+  border-radius: 3px;
+  background-color: #fff;
+  min-width: 120px;
+}
+
+/* === Summary Cards === */
+#Tab1 .summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 4px;
+  margin: 4px 0;
+}
+
+/* === Summary Box Styling with Quarter-Circle Reveal === */
+#Tab1 .summary-box {
+  position: relative;
+  overflow: hidden;
+  background-color: #1e1e2f;
+  color: #fff;
+  border-radius: 10px;
+  height: 50px;
+  min-width: 140px;
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Tab1 .summary-box::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 150px;
+  height: 150px;
+  background-color: var(--box-color, #00b894);
+  border-radius: 50%;
+  transform: scale(0.6);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+#Tab1 .summary-box:hover::before,
+#Tab1 .summary-box.animate::before {
+  transform: scale(4);
+}
+
+#Tab1 .summary-box h4,
+#Tab1 .summary-box p {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+#Tab1 .summary-box h4 {
+  font-size: 10px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#Tab1 .summary-box p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+#Tab1 .summary-box.animate p {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* === Table Section === */
+#Tab1 .table-section {
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* === Scrollable Table Container === */
+#Tab1 .table-scroll {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* === Table Styling === */
+#Tab1 #executive-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* === Header Styling === */
+#Tab1 #executive-table th {
+  position: sticky;
+  top: 0;
+  background-color: #f0f4f8;
+  color: #333;
+  font-weight: 600;
+  padding: 6px 8px;
+  border-bottom: 1px solid #ddd;
+  z-index: 1;
+  text-align: center;
+}
+
+/* === Cell Styling === */
+#Tab1 #executive-table td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* === Row Hover === */
+#Tab1 #executive-table tr:hover {
+  background-color: #f9f9fc;
+}
+
+/* === Zebra Striping === */
+#Tab1 #executive-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* === Responsive === */
+@media screen and (max-width: 768px) {
+
+  .dashboard {
+  font-family: 'Poppins', sans-serif;       /* Font for entire dashboard */
+  padding: 35px;                            /* Inner spacing around dashboard */
+  width: 100%;                              /* Full width relative to parent */
+  max-width: 1800px;                        /* Maximum width allowed */
+  min-width: 320px;                         /* Minimum width for mobile safety */
+  height: auto;                             /* Height adjusts to content */
+  max-height: 1010px;                        /* Maximum height allowed */
+  min-height: 1010px;                        /* Minimum height for layout stability */
+  margin: 0 auto;                           /* Center horizontally */
+  background: #4098e6;                      /* Background color */
+  border-radius: 10px;                      /* Rounded corners */
+  box-shadow: 0 0 12px rgba(0,0,0,0.04);     /* Soft outer shadow */
+  overflow-y: auto;                         /* Enables scroll if content exceeds max-height */
+}
+
+  body {
+    font-size: 0.875rem; /* 14px */
+    background-color: #4098e6;
+    padding: 10px;
+    overflow-y: visible;
+  }
+
+  #Tab1 {
+    padding: 0.25rem;
+    font-size: 0.625rem; /* 10px */
+  }
+
+  #Tab1 .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #Tab1 .dashboard-header h2 {
+    font-size: clamp(1.125rem, 4vw, 1.375rem); /* 18–22px */
+    text-align: left;
+  }
+
+  #Tab1 .filter-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  #Tab1 .filter-bar label {
+    font-size: clamp(0.875rem, 3vw, 1rem); /* 14–16px */
+  }
+
+  #Tab1 .filter-bar select {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    padding: 0.375rem 0.75rem;
+    min-width: 100%;
+    border-width: 0.1875rem;
+  }
+
+  #Tab1 .summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+
+  #Tab1 .summary-box {
+    height: 3.5rem;
+    min-width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  #Tab1 .summary-box::before {
+    top: -5rem;
+    right: -5rem;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  #Tab1 .summary-box h4 {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  #Tab1 .summary-box p {
+    font-size: 0.875rem;
+  }
+
+  #Tab1 .table-section {
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+  }
+
+  #Tab1 .table-scroll {
+    max-height: 60vh;
+    border-radius: 0.5rem;
+  }
+
+  #Tab1 #executive-table {
+    font-size: 0.625rem;
+    min-width: 100%;
+  }
+
+  #Tab1 #executive-table th {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  #Tab1 #executive-table td {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  #Tab1 #executive-table tr:hover {
+    background-color: #f0f0f5;
+  }
+
+  #Tab1 #executive-table tbody tr:nth-child(even) {
+    background-color: #f7f7fb;
+  }
+}

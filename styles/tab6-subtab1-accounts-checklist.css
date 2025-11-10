@@ -1,0 +1,252 @@
+/* === Global Styles === */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #4098e6;
+  color: #1e1e2f;
+  padding: 0;
+  overflow-y: visible;
+}
+
+/* ------------------------------
+   Dashboard Container
+------------------------------ */
+.dashboard {
+  font-family: 'Poppins', sans-serif;
+  padding: 16px;
+  width: 100%;
+  max-width: 1800px;
+  min-width: 320px;
+  height: auto;
+  max-height: 700px;
+  min-height: 520px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.04);
+  overflow-y: auto;
+}
+
+/* === Header Row with Title and Dropdown === */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 12px;
+}
+
+/* === Heading === */
+h2 {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* === Month Dropdown Wrapper === */
+.month-selector {
+  display: flex;
+  align-items: center;
+}
+
+.month-selector label {
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: 8px;
+  color: #ffffff;
+}
+
+#monthDropdown {
+  padding: 6px 10px;
+  font-size: 13px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #1e1e2f;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease;
+}
+
+#monthDropdown:focus {
+  outline: none;
+  border-color: #7a53fa;
+}
+
+/* === Table Container === */
+.table-container {
+  width: 1080px;
+  height: 480px;
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+/* === Data Table === */
+.data-table {
+  border-collapse: collapse;
+  font-size: 9px;
+  table-layout: fixed;
+  width: max-content;
+  min-width: 100%;
+}
+
+/* === Sticky Header Row 1 === */
+.data-table thead tr:nth-child(1) th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #7a53fa;
+}
+
+/* === Sticky Header Row 2 === */
+.data-table thead tr:nth-child(2) th {
+  position: sticky;
+  top: 24px;
+  z-index: 4;
+  background-color: #7a53fa;
+}
+
+/* === Locked Top-Left Cells A1–D1 === */
+.data-table thead tr:first-child th:nth-child(1) {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #7a53fa;
+  width: 80px;
+}
+
+.data-table thead tr:first-child th:nth-child(2) {
+  position: sticky;
+  top: 0;
+  left: 80px;
+  z-index: 100;
+  background-color: #7a53fa;
+  width: 80px;
+}
+
+.data-table thead tr:first-child th:nth-child(3) {
+  position: sticky;
+  top: 0;
+  left: 160px;
+  z-index: 100;
+  background-color: #7a53fa;
+  width: 80px;
+}
+
+.data-table thead tr:first-child th:nth-child(4) {
+  position: sticky;
+  top: 0;
+  left: 240px;
+  z-index: 100;
+  background-color: #7a53fa;
+  width: 200px;
+}
+
+/* === Sticky Columns A–D (Body Cells) === */
+.data-table td:nth-child(1) {
+  position: sticky;
+  left: 0px;
+  z-index: 1;
+  background-color: #7a53fa;
+  width: 80px;
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.data-table td:nth-child(2) {
+  position: sticky;
+  left: 80px;
+  z-index: 1;
+  background-color: #7a53fa;
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+}
+
+.data-table td:nth-child(3) {
+  position: sticky;
+  left: 160px;
+  z-index: 1;
+  background-color: #7a53fa;
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+}
+
+.data-table td:nth-child(4) {
+  position: sticky;
+  left: 240px;
+  z-index: 1;
+  background-color: #7a53fa;
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+/* === All Cells === */
+.data-table th,
+.data-table td {
+  padding: 3px 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* === Compact Non-Frozen Cells (E onward) === */
+.data-table td:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* === Header Styling === */
+.data-table th {
+  font-weight: 600;
+  color: #444;
+}
+
+/* === Row Styling === */
+.data-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table tbody tr:hover {
+  background-color: #e3f2fd;
+  transition: background-color 0.2s ease;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+  .table-container {
+    width: 100%;
+    height: 300px;
+  }
+
+  .data-table {
+    font-size: 8px;
+  }
+
+  h2 {
+    font-size: 11px;
+  }
+
+  .header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .month-selector {
+    justify-content: flex-start;
+    padding-right: 0;
+  }
+}
