@@ -1,0 +1,61 @@
+<!-- === Subtab 1: Executive Filter Dashboard === -->
+<div class="subtab-content" id="subtab1-container">
+  <div class="dashboard">
+
+    <!-- Executive Selector -->
+    <div class="dashboard-header">
+      <h2>EXECUTIVE-WISE SALES OVERVIEW</h2>
+      <div class="filter-bar">
+        <label for="executiveSelect"><strong>SELECT SALES EXECUTIVE:</strong></label>
+        <select id="executiveSelect">
+          <option value="">Loading...</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Summary Cards with Quarter-Circle Reveal -->
+    <div class="summary-cards">
+      <div class="summary-box" style="--box-color: #00b894;">
+        <h4>Orders Received</h4>
+        <p id="orders-received">--</p>
+      </div>
+      <div class="summary-box" style="--box-color: #0984e3;">
+        <h4>Total Quantity</h4>
+        <p id="total-quantity">--</p>
+      </div>
+      <div class="summary-box" style="--box-color: #fdcb6e;">
+        <h4>Amount Received</h4>
+        <p id="amount-received">--</p>
+      </div>
+      <div class="summary-box" style="--box-color: #d63031;">
+        <h4>Pending Payments</h4>
+        <p id="pending-payments">--</p>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-section">
+      <h3>Executive Transaction Details</h3>
+      <div class="table-scroll">
+        <table id="executive-table">
+          <thead>
+            <tr>
+              <th>TIMESTAMP</th>
+              <th>PARTY NAME</th>
+              <th>DISTRICT / TOWN</th>
+              <th>ORDER RECEIVED</th>
+              <th>PAYMENT RECEIVED</th>
+              <th>AMOUNT</th>
+              <th>CURRENT AMOUNT</th>
+              <th>POST-DATED AMOUNT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

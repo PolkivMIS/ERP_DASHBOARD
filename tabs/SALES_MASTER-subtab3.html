@@ -1,0 +1,63 @@
+<!-- === Subtab 3: Store Sales Dashboard === -->
+<div class="subtab-content" id="salesmaster-subtab3-container">
+  <div class="dashboard">
+
+    <!-- Store Selector -->
+    <div class="dashboard-header">
+      <h2>STORE SALES OVERVIEW</h2>
+      <div class="filter-bar">
+        <label for="storeSelect"><strong>Select Store:</strong></label>
+        <select id="storeSelect">
+          <option value="">Loading...</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+      <div class="summary-box" style="--box-color: #edde3a;">
+        <h4>Orders Received</h4>
+        <p id="store-orders">--</p>
+      </div>
+      <div class="summary-box" style="--box-color: #4db2fa;">
+        <h4>Total Quantity</h4>
+        <p id="store-quantity">--</p>
+      </div>
+      <div class="summary-box" style="--box-color: #32e532;">
+        <h4>Amount Received</h4>
+        <p id="store-amount">--</p>
+      </div>
+      <div class="summary-box" style="--box-color: #ff0fa3;">
+        <h4>Unique Parties</h4>
+        <p id="store-parties">--</p>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="table-section">
+      <h3 style="margin: 4px 0; font-size: 11px;">Store Transaction Details</h3>
+      <div class="table-scroll">
+        <table id="store-table">
+          <thead>
+            <tr>
+              <th>TIMESTAMP</th>
+              <th>PARTY NAME</th>
+              <th>LOCATION</th>
+              <th>SALES EXECUTIVE</th>
+              <th>ORDER RECEIVED</th>
+              <th>PAYMENT RECEIVED</th>
+              <th>QUANTITY</th>
+              <th>AMOUNT</th>
+              <th>CURRENT AMOUNT</th>
+              <th>POST-DATED AMOUNT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be injected via JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Sales Dashboard</title>
+
+  <link rel="stylesheet" href="../styles/tab4-subtab1-daily-sales.css" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- === Subtab 1: Daily Sales Dashboard === -->
+  <div class="subtab-content" id="Tab1">
+    <main class="dashboard-grid">
+      <!-- 🟩 LEFT PANEL: Sales Table -->
+      <section class="sales-table">
+        <h3>🏬 All Store Sales</h3>
+        <div class="table-scroll">
+          <table aria-label="All Store Sales">
+            <thead>
+              <tr>
+                <th scope="col">Outlet Name</th>
+                <th scope="col">Daily Sales</th>
+                <th scope="col">Monthly Sales</th>
+              </tr>
+            </thead>
+            <tbody id="salesTableBody">
+              <!-- JavaScript will inject rows here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 🔵🔴 RIGHT PANEL: Logo + Filters + Summary Boxes -->
+      <section class="right-panel">
+        <div class="brand-logo-box">
+          <img src="../assets/KILLER.jpeg" alt="KILLER Logo" class="brand-logo" />
+        </div>
+
+        <div class="sales-summary-grid">
+          <!-- 🟢 Row 1: Store Dropdown + Today's Sales -->
+          <div class="summary-row">
+            <div class="input-group">
+              <label for="storeDropdown">Select Store:</label>
+              <select id="storeDropdown">
+                <option value="">Loading stores...</option>
+              </select>
+            </div>
+            <div class="summary-box" id="currentDateSales" style="--box-color: #ffbf00;">
+              <h4>TODAY'S SALES</h4>
+              <p>₹ 0</p>
+            </div>
+          </div>
+
+          <!-- 🟡 Row 2: Date Picker + Sales on Selected Date -->
+          <div class="summary-row">
+            <div class="input-group">
+              <label for="dateInput">Select Date:</label>
+              <input type="date" id="dateInput" />
+            </div>
+            <div class="summary-box" id="selectedDateSales" style="--box-color: #10dbff;">
+              <h4>SALES ON SELECTED DATE</h4>
+              <p>₹ 0</p>
+            </div>
+          </div>
+
+          <!-- 🔵 Row 3: Month Dropdown + Monthly Sales -->
+          <div class="summary-row">
+            <div class="input-group">
+              <label for="monthInput">Select Month:</label>
+              <select id="monthInput">
+                <option value="">Select Month</option>
+                <option value="JANUARY">January</option>
+                <option value="FEBRUARY">February</option>
+                <option value="MARCH">March</option>
+                <option value="APRIL">April</option>
+                <option value="MAY">May</option>
+                <option value="JUNE">June</option>
+                <option value="JULY">July</option>
+                <option value="AUGUST">August</option>
+                <option value="SEPTEMBER">September</option>
+                <option value="OCTOBER">October</option>
+                <option value="NOVEMBER">November</option>
+                <option value="DECEMBER">December</option>
+              </select>
+            </div>
+            <div class="summary-box" id="selectedMonthSales" style="--box-color: #001aff;">
+              <h4>SALES ON SELECTED MONTH</h4>
+              <p>₹ 0</p>
+            </div>
+          </div>
+
+          <!-- 🔴 Row 4: Year Dropdown + Yearly Sales -->
+          <div class="summary-row">
+            <div class="input-group">
+              <label for="yearInput">Select Year:</label>
+              <select id="yearInput">
+                <option value="">Select Year</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+            <div class="summary-box" id="selectedYearSales" style="--box-color: #d400ff;">
+              <h4>SALES ON SELECTED YEAR</h4>
+              <p>₹ 0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- === Subtab 2: Placeholder === -->
+  <div class="subtab-content" id="Tab2" style="display:none;">
+    <p style="text-align:center; padding: 40px; font-size: 16px; color: #666;">
+      No content available for Tab 2 yet.
+    </p>
+  </div>
+
+</body>
+</html>

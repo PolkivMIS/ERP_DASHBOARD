@@ -1,0 +1,69 @@
+<!-- STORE_ATTENDENCE-subtab1.html -->
+
+<!-- === Subtab 1: Store Attendance Dashboard === -->
+<div class="subtab-content" id="Tab1">
+  <div id="attendance-dashboard" class="dashboard">
+
+    <!-- Employee Selector -->
+    <div class="employee-selector">
+      <label for="employee-select"><strong>Select Employee:</strong></label>
+      <select id="employee-select">
+        <option value="">Loading...</option>
+      </select>
+    </div>
+
+    <!-- Employee Info Card -->
+    <div class="employee-card">
+      <img id="employee-photo" src="assets/icons/default.jpg" alt="Employee Photo" />
+      <div class="employee-info">
+        <h2 id="employee-name">Loading...</h2>
+        <p id="employee-store">Loading store info...</p>
+      </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section">
+
+      <!-- Attendance Summary Card -->
+      <div class="attendance-summary">
+        <h3>Attendance Summary</h3>
+        <ul>
+          <li><span>Present:</span><span id="present-days">--</span></li>
+          <li><span>Absent:</span><span id="absent-days">--</span></li>
+          <li><span>Weekoff:</span><span id="weekoff-days">--</span></li>
+          <li><span>Late:</span><span id="late-days">--</span></li>
+          <li><span>Early Leave:</span><span id="early-leave-days">--</span></li>
+        </ul>
+      </div>
+
+      <!-- Salary Details Card -->
+      <div class="salary-details">
+        <h3>Salary Details</h3>
+        <ul>
+          <li><span>Payable Days:</span><span id="payable-days">--</span></li>
+          <li><span>Net Salary:</span> <span id="net-salary">--</span></li>
+          <li><span>Monthly Salary:</span> <span id="monthly-salary">--</span></li>
+          <li><span>Daily Rate:</span> <span id="daily-rate">--</span></li>
+          <li><span>Working Days:</span><span id="working-days">--</span></li>
+        </ul>
+      </div>
+
+      <!-- Attendance Chart Card -->
+      <div class="attendance-chart">
+        <h3>Monthly Attendance</h3>
+        <canvas id="attendance-pie" width="200" height="200"></canvas>
+      </div>
+
+    </div> <!-- End of summary-section -->
+
+  </div> <!-- End of dashboard container -->
+</div>
+
+<!-- === Subtab 2: Consolidated Sheet Placeholder === -->
+<div class="subtab-content" id="Tab2" style="display:none;">
+  <div class="dashboard consolidated-placeholder">
+    <p style="text-align:center; padding: 40px; font-size: 16px; color: #666;">
+      Loading consolidated sheet...
+    </p>
+  </div>
+</div>

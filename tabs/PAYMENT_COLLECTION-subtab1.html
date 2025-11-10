@@ -1,0 +1,63 @@
+<div id="Tab1" class="dashboard">
+  <!-- 🔷 Dashboard Header -->
+  <div class="dashboard-header">
+    <h2>PAYMENT COLLECTION DASHBOARD</h2>
+  </div>
+
+  <!-- 📅 Month Selector -->
+  <div class="month-selector">
+    <label for="monthDropdown">Select Month:</label>
+    <select id="monthDropdown">
+      <option value="01">January</option>
+      <option value="02">February</option>
+      <option value="03">March</option>
+      <option value="04">April</option>
+      <option value="05">May</option>
+      <option value="06">June</option>
+      <option value="07">July</option>
+      <option value="08">August</option>
+      <option value="09">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+  </div>
+
+  <!-- 📊 Table + Chart Side-by-Side -->
+  <div class="dashboard-body">
+    <!-- 📋 Executive Table -->
+    <div class="table-section">
+      <div class="table-scroll">
+        <table id="executive-table">
+          <thead>
+            <tr>
+              <th>EXECUTIVE NAME</th>
+              <th>TARGET AMOUNT</th>
+              <th>ACHIEVED AMOUNT</th>
+              <th>DIFFERENCE</th>
+              <th>ACHIEVEMENT PERCENTAGE</th>
+            </tr>
+          </thead>
+          <tbody id="executive-body">
+            <tr><td>ANINDO</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>VIKASH</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>SHINTU</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>MAHENDRA</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>NISHANT JI</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>BIPIN</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>SANJIB</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>UMESH</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>ANKIT</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>SUBHAJIT</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>UNASSIGNED</td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 📈 Chart Section -->
+    <div class="chart-section">
+      <canvas id="paymentChart"></canvas>
+    </div>
+  </div>
+</div>
